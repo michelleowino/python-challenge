@@ -2,7 +2,7 @@
 
 import csv
 
-# load data 
+# Load data 
 election_data_csv =  "Resources/election_data.csv"
 election_analysis = "analysis/pypoll_output.txt"
 
@@ -10,17 +10,17 @@ election_analysis = "analysis/pypoll_output.txt"
 total_votes = 0 
 votes_per_candidate = {}
 
-# open folder 
+# Open and read csv
 
 with open(election_data_csv, newline='') as csvfile:
 
-    # CSV reader specifies delimiter and variable that holds contents
+
     csvreader = csv.reader(csvfile, delimiter=',')
 
     # Read the header row first
     csv_header = next(csvreader)
     
-    # For each row 
+    # Calculate votes cast, list of candidates who recieved votes, percentage and winner 
     for row in csvreader:
         total_votes += 1
 
